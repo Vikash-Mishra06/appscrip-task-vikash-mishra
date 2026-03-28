@@ -55,12 +55,21 @@
   font-weight: 600;
 }
 
+/* Updated Heart Icon Styles */
 .heart {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px; /* Adjusted for better icon visibility */
   color: #aaa;
+  transition: color 0.2s ease;
 }
 
 .heart.active {
-  color: red;
+  color: #ff0000; /* Red fulfilled color */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
 }

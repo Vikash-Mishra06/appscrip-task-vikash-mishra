@@ -22,27 +22,21 @@ export default function ProductCard({ product }) {
           {product.title}
         </h3>
 
+        <div className="row">
         <p className="login-text">
           Sign in or Create an account to see pricing
         </p>
-
-        <div className="card-footer">
-
-          <p className="product-price">
-            ${product.price}
-          </p>
-
-          <span
-            className={`heart ${liked ? "active" : ""}`}
+          {/* Updated to use Remix Icon classes */}
+          <i 
+            className={`heart ${liked ? "ri-heart-3-fill active" : "ri-heart-3-line"}`}
             onClick={() => setLiked(!liked)}
-          >
-            ♥
-          </span>
+          ></i>
+          </div>
 
         </div>
 
       </div>
 
-    </div>
+
   );
 }

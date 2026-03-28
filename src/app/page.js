@@ -4,6 +4,7 @@ import FilterLayout from "@/components/FilterLayout";
 import { getProducts } from "@/lib/api";
 import "./page.css";
 import 'remixicon/fonts/remixicon.css'
+import Footer from "@/components/Footer";
 
 // server component
 export default async function Home() {
@@ -30,7 +31,7 @@ export default async function Home() {
 
       {/* filter + grid handled inside client component */}
       <FilterLayout products={products} />
-
+      <Footer />
     </main>
   );
 }
