@@ -1,0 +1,32 @@
+.product-card {
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.image-container {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-title {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.product-price {
+  font-weight: 600;
+  margin-top: 6px;
+}

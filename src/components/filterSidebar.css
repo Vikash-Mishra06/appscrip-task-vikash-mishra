@@ -1,0 +1,15 @@
+.sidebar {
+  width: 240px;
+  border-right: 1px solid #eee;
+  padding-right: 16px;
+}
+
+.filter-group {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.filter-group label {
+  display: block;
+  margin-top: 6px;
+}
