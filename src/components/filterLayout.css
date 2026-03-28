@@ -1,0 +1,11 @@
+.filter-header {
+  padding: 0 24px;
+  margin-bottom: 10px;
+}
+
+.filter-header button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}

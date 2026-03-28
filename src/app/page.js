@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
-import ProductGrid from "@/components/ProductGrid";
-import FilterSidebar from "@/components/FilterSidebar";
+import FilterLayout from "@/components/FilterLayout";
 import { getProducts } from "@/lib/api";
 import "./page.css";
 
@@ -16,10 +15,8 @@ export default async function Home() {
       <Navbar />
       <Header />
 
-      <div className="layout">
-        <FilterSidebar />
-        <ProductGrid products={products} />
-      </div>
+      {/* filter + grid handled inside client component */}
+      <FilterLayout products={products} />
 
     </main>
   );
