@@ -28,6 +28,9 @@
   color: #777;
   text-transform: uppercase;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .filter-toggle-btn:hover {
@@ -46,4 +49,15 @@
 
 .btn-text {
   text-decoration: underline;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  font-size: 14px;
+}
+
+/* when filter is visible → arrow rotates left */
+.arrow.rotate {
+  transform: rotate(180deg);
 }

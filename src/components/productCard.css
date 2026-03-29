@@ -44,6 +44,10 @@
   margin-top: 4px;
 }
 
+.login-text span {
+  text-decoration: underline;
+}
+
 .card-footer {
   display: flex;
   justify-content: space-between;

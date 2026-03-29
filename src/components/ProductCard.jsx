@@ -24,7 +24,7 @@ export default function ProductCard({ product }) {
 
         <div className="row">
         <p className="login-text">
-          Sign in or Create an account to see pricing
+          <span>Sign in</span> or Create an account to see pricing
         </p>
           {/* Updated to use Remix Icon classes */}
           <i 

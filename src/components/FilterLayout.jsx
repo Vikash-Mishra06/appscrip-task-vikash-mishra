@@ -24,17 +24,13 @@ export default function FilterLayout({ products }) {
                 className="filter-toggle-btn"
                 onClick={() => setShowFilters(!showFilters)}
               >
-                {showFilters ? (
-                  <>
-                    <i className="ri-arrow-left-s-line"></i>
-                    <span className="btn-text">HIDE FILTER</span>
-                  </>
-                ) : (
-                  <>
-                    <i className="ri-arrow-right-s-line"></i>
-                    <span className="btn-text">SHOW FILTER</span>
-                  </>
-                )}
+                <span className={`arrow ${showFilters ? "rotate" : ""}`}>
+                  <i class="ri-arrow-right-s-line"></i>
+                </span>
+
+                <span className="btn-text">
+                  {showFilters ? "HIDE FILTER" : "SHOW FILTER"}
+                </span>
               </button>
             </div>
 
@@ -51,7 +47,7 @@ export default function FilterLayout({ products }) {
         <div className={`layout ${showFilters ? "" : "full-width"}`}>
           {showFilters && <FilterSidebar />}
           <div className="container">
-            <ProductGrid products={products} />
+            <ProductGrid products={products} showFilters={showFilters} />
           </div>
         </div>
       </div>
