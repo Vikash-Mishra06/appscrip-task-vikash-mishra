@@ -1,4 +1,3 @@
-// function to fetch products from api
 export async function getProducts() {
   try {
     const res = await fetch("https://fakestoreapi.com/products", {
@@ -6,12 +5,12 @@ export async function getProducts() {
     });
 
     if (!res.ok) {
-      throw new Error("failed to fetch products");
+      throw new Error("Failed to fetch");
     }
 
     return res.json();
-  } catch (error) {
-    console.error(error);
+  } catch (err) {
+    console.log("API ERROR:", err);
     return [];
   }
 }
