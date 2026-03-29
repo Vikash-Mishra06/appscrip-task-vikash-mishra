@@ -3,12 +3,13 @@ import Header from "@/components/Header";
 import FilterLayout from "@/components/FilterLayout";
 import { getProducts } from "@/lib/api";
 import "./page.css";
-import 'remixicon/fonts/remixicon.css'
+import "remixicon/fonts/remixicon.css";
 import Footer from "@/components/Footer";
+
+export const dynamic = "force-dynamic";
 
 // server component
 export default async function Home() {
-  // fetching data on server
   const products = await getProducts();
 
   return (
@@ -29,8 +30,9 @@ export default async function Home() {
       <Navbar />
       <Header />
 
-      {/* filter + grid handled inside client component */}
+      {/* filter + grid */}
       <FilterLayout products={products} />
+
       <Footer />
     </main>
   );

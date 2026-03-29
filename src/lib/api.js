@@ -1,16 +1,18 @@
 export async function getProducts() {
   try {
     const res = await fetch("https://fakestoreapi.com/products", {
-      cache: "no-store",
+      cache: "no-store", 
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch");
+      console.error("API FAILED:", res.status);
+      return [];
     }
 
-    return res.json();
-  } catch (err) {
-    console.log("API ERROR:", err);
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error("FETCH ERROR:", error);
     return [];
   }
 }
