@@ -41,7 +41,7 @@ const FALLBACK_PRODUCTS = [
 
 export async function GET() {
   try {
-    const res = await fetch("https://fakestoreapi.com/products", {
+    const res = await fetch("https://dummyjson.com/products?limit=20", {
       cache: "no-store",
       timeout: 8000,
       headers: {
@@ -50,7 +50,16 @@ export async function GET() {
     });
 
     if (res.ok) {
-      const products = await res.json();
+      const data = await res.json();
+      // Transform DummyJSON format to match our needs
+      const products = data.products.map(product => ({
+        id: product.id,
+        title: product.title,
+        price: product.price,
+        image: product.thumbnail || product.images?.[0] || "",
+        description: product.description,
+      }));
+      
       return Response.json(products, {
         headers: {
           'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -59,8 +68,8 @@ export async function GET() {
       });
     }
     
-    // If external API fails, return fallback data
-    console.warn(`Fake Store API unavailable (status: ${res.status}), using fallback data`);
+    // If DummyJSON fails, return fallback data
+    console.warn(`DummyJSON API unavailable (status: ${res.status}), using fallback data`);
     return Response.json(FALLBACK_PRODUCTS, {
       headers: {
         'Cache-Control': 'public, s-maxage=60',
